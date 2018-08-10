@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <span ion-text>Nearby</span>
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="lightest-bg">
+
+<!-- <div padding *ngIf="from !== 'home'">
+  <ion-segment [(ngModel)]="proptype">
+    <ion-segment-button value="">
+      All
+    </ion-segment-button>
+    <ion-segment-button value="sale">
+      For Sale
+    </ion-segment-button>
+    <ion-segment-button value="rent">
+      For Rent
+    </ion-segment-button>
+  </ion-segment>
+</div> -->
+
+  <div id="nearby-map" class="nearby-map">
+		<agm-map [latitude]="lat" [longitude]="lng" [zoom]="12">
+			<agm-marker *ngFor="let restaurant of restaurants; let i = index"
+			 [latitude]="restaurant.lat" [longitude]="restaurant.long">
+				<agm-info-window>
+					<img src="{{restaurant.thumbnail}}" class="mw240" tappable (click)="openRestaurantDetail(restaurant)">
+					<h3 tappable (click)="openRestaurantDetail(restaurant)">
+						<strong>{{restaurant.title}}</strong>
+					</h3>
+					<p ion-text color="primary" no-margin>
+						{{restaurant.city}}, {{restaurant.state}} •
+						<span ion-text class="fw700">{{ restaurant.price }}</span>
+					</p>
+				</agm-info-window>
+			</agm-marker>
+		</agm-map>
+	</div>
+
+</ion-content>
