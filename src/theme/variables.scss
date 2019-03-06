@@ -1,36 +1,32 @@
-// Ionic Variables and Theming. For more info, please see:
-// http://ionicframework.com/docs/v2/theming/
+
 $font-path: "../assets/fonts";
 @import "ionic.globals";
 
 // Grid breakpoints
-// --------------------------------------------------
+
 $grid-max-widths: (
  lg: 992px
 );
 
-// Named Color Variables
-// --------------------------------------------------
-// Named colors makes it easy to reuse colors on various components.
-// It's highly recommended to change the default colors
-// to match your app's branding. Ionic uses a Sass map of
-// colors so you can add, rename and remove colors as needed.
-// The "primary" color is the only required color in the map.
+// Colores
 
 $colors: (
-  primary:    #cd1e37,
-  secondary:  #ff9e21,
-  danger:     #dc3545,
-  light:      #ffd1d7,
-  dark:       #96071a
+  primary:    #920c20,
+  secondary:  #eeb30f,
+  danger:     #8a0f0f,
+  light:      #ffffff,
+  dark:       #96071a,
+  light2: #1b489b,
+  dark2: #072763
 );
 
-// Shared Variables
-// --------------------------------------------------
-// To customize the look and feel of this app, you can override
-// the Sass variables found in Ionic's source scss files.
-// To view all the possible Ionic variables, see:
-// http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
+//primary     #1b489b
+//secondary   #dd9a1c 
+//dark        #100c50  
+
+
+//  Variables Compartidas
+
 
 $text-color: color($colors, primary); // rgba(205, 30, 55, 1)
 
@@ -40,8 +36,7 @@ $toolbar-background: #fff;
 
 
 // App iOS Variables
-// --------------------------------------------------
-// iOS only Sass variables can go here
+
 
 // $toolbar-ios-background: color($colors, primary);
 $toolbar-ios-border-color: rgba(color($colors, primary), .4);
@@ -88,9 +83,7 @@ $toolbar-md-text-color: color($colors, dark);
 @import "animate";
 
 // Ionicons
-// --------------------------------------------------
-// The premium icon font for Ionic. For more info, please see:
-// http://ionicframework.com/docs/v2/ionicons/
+
 @import "ionic.ionicons";
 
 

@@ -15,7 +15,7 @@
 			      <p [innerHTML]="slide.description" class="text-white"></p>
 
 						<div padding>
-				      <button ion-button round block color="secondary" margin-top icon-end (click)="onSlideNext()">
+				      <button ion-button round block color="secondary" class="b_inicio" margin-top icon-end (click)="onSlideNext()">
 				      	Siguiente
 				      	<ion-icon name="arrow-round-forward" color="light"></ion-icon>
 				    	</button>
@@ -24,14 +24,17 @@
 			    <ion-slide>
 			      <ion-toolbar>
 			      </ion-toolbar> 
-			      <img src="../../assets/img/logo-intro4.png" class="slide-image" margin-top>
-			      <h2 class="slide-title text-white">Poniendole magia a tus noches </h2>
+						<img src="../../assets/img/logo-intro6.png" class="slide-image" margin-top>
+						
+						 <h2 class="slide-title2 text-white"> <strong> Bricker </strong> 
+						 <br/> <br/>
+						 Poniendole magia a tus momentos </h2>
 
 			      <div padding>
-			        <button ion-button block round color="secondary" margin-top (click)="openAuthPage()">
+			        <button ion-button block round color="secondary" class="b_inicio2" margin-top (click)="openAuthPage()">
 			          Ingresar (Local)
 			        </button>
-			        <button ion-button block round color="dark" margin-top (click)="openHomePage()">
+			        <button ion-button block round color="light2" class="b_inicio2" margin-top (click)="openHomePage()">
 			          Comenzar (Usuario)
 							</button>
 						</div>

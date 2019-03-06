@@ -19,6 +19,7 @@ import {OrdersService} from "../providers/orders-service-mock";
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Keyboard } from '@ionic-native/keyboard';
+import { Cuentas } from '../providers/cuentasProvider';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,7 @@ import { Keyboard } from '@ionic-native/keyboard';
     MessageService,
     CartService,
     OrdersService,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler}, Cuentas
   ]
 })
 export class AppModule {}

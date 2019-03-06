@@ -4,5 +4,12 @@
     "cordova": {}
   },
   "type": "ionic-angular",
-  "pro_id": "ef622600"
+  "pro_id": "ef622600",
+  "proxies": [
+    {
+      "path":"/api_tesis",
+      "proxyUrl": "http://www.ultratest.cf/api_tesis"
+    }
+  ]
+
 }

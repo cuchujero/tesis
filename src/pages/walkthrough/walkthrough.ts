@@ -18,17 +18,17 @@ export class WalkthroughPage {
 
   slideList: Array<any> = [
     {
-      title: "<strong>NIGHTRACKER</strong>",
+      title: "<strong>Bricker</strong>",
       description: "No sabes donde reunirte a comer?. Encontra los restaurantes y bares cercanos con las mejores promociones.",
       image: "assets/img/logo-intro1.png",
     },
     {
-      title: "<strong>NIGHTRACKER</strong>",
+      title: "<strong>Bricker</strong>",
       description: "No encontras un lugar comodo para beber con amigos?. Busca los que tengan tu trago o bebida predilecta",
       image: "assets/img/logo-intro2.png",
     },
     {
-      title: "<strong>NIGHTRACKER</strong>",
+      title: "<strong>Bricker</strong>",
       description: "Tampoco decidis en que parte encender tu noche?. Comparalos mirando sus fotos y elegi el mejor ",
       image: "assets/img/logo-intro3.png",
     }
