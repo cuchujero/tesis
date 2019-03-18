@@ -1,0 +1,45 @@
+<ion-header>
+		<ion-navbar color="primary">
+			<button ion-button menuToggle>
+				<ion-icon name="menu"></ion-icon>
+			</button>
+			<ion-title style="text-align: center !important;">
+				<span ion-text>Historial</span>
+			</ion-title>
+		</ion-navbar>
+	</ion-header>
+	
+	
+	
+	<ion-content class="lightest-bg">
+	
+		<ion-grid no-padding fixed>
+			<ion-row no-padding>
+				<ion-col>
+					<ion-list>
+								
+					<ion-list ion-row padding-horizontal>
+						<ion-item *ngFor="let resul of result; let i = index">
+						
+						Reserva N°: {{i+1}}	
+						<h2 ion-text color="dark" class="fw500">Nombre: {{resul.nombre}}</h2>
+						<h2 ion-text color="dark" class="fw500">Fecha: {{resul.fecha}}</h2>
+						<h2 ion-text color="dark" class="fw500">Hora: {{resul.hora}}</h2>
+						<h2 ion-text color="dark" class="fw500">N° personas: {{resul.cantidad_personas}}</h2>
+						<h2 ion-text color="dark" class="fw500">Teléfono: {{resul.telefono_usuario}}</h2>
+						<h2 ion-text color="dark" class="fw500">Comentario comensal: {{resul.comentario_usuario}}</h2>
+						<h2 ion-text color="dark" class="fw500">Comentario local: {{resul.comentario_adm}}</h2>
+					
+						<span *ngIf="resul.confirmada==='1'" ion-text color="dark" class="fw500">Estado Reserva: Confirmada</span>
+						<span *ngIf="resul.rechazada==='1'" ion-text color="dark" class="fw500">Estado Reserva: Rechazada</span>
+						<span *ngIf="resul.confirmada==='0' && resul.rechazada==='0'" ion-text color="dark" class="fw500">Estado Reserva: En espera</span> 
+						
+					</ion-item>
+					</ion-list>
+					</ion-list>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+	
+	</ion-content>
+	

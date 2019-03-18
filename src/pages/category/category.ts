@@ -18,10 +18,17 @@ export class CategoryPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public service: CategoryService) {
   	this.findAll();
+	}
+	
+  id_return_usuario(){
+
+    // Recupero informacion de ventana anterior (id)
+
+    return this.navParams.get('id_usuario');
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CategoryPage');
+   
   }
 
 	findAll() {
@@ -31,7 +38,10 @@ export class CategoryPage {
 	}
 
   openRestaurantListPage(proptype) {
-  	this.navCtrl.push('page-restaurant-list', {'proptype': proptype});
+  // this.navCtrl.push('page-home',this.navParams.get('id_usuario')); 
+ 
+		this.navCtrl.push('page-home', {'proptype': proptype, id_usuario: this.navParams.get('id_usuario') });   // envio el id del rubro
+		//this.navCtrl.push('page-home', {'proptype': proptype}, this.navParams.get('id_usuario'));
   }
 
 }

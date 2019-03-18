@@ -3,11 +3,14 @@
         <button ion-button menuToggle>
             <ion-icon name="menu"></ion-icon>
         </button>
-        <ion-title>
-            <span ion-text>Your Restaurant</span>
+        <ion-title style="text-align: center !important;"> 
+            Información Local 
         </ion-title>
     </ion-navbar>
-</ion-header>
+
+</ion-header > 
+
+
 
 <ion-content class="your-restaurant lightest-bg">
 
@@ -16,49 +19,105 @@
 			<ion-col>
 				<ion-card class="primary-bg">
 					<ion-card-content>
-						<p class="text-white">Complete the form with your restaurant data and register it.</p>
+						<p class="text-white">Datos del local</p>
 					</ion-card-content>
 				</ion-card>
 
 				<ion-card>
 					<ion-card-content>
-						<form [formGroup]="onYourRestaurantForm" class="list-form">
+
+
+
+
+
+
+							<form (ngSubmit)="enviar_formulario()">
+									
+									<ion-item>
+											<ion-label color="primary" stacked>Nombre Local </ion-label>
+											<ion-input type="text" [(ngModel)]="todo.nombre_local" name="nombre_local" placeholder="{{ result.nombre_local }}"></ion-input>
+								   </ion-item>
+
+								   <ion-item>
+										<ion-label color="primary" stacked>Direccion</ion-label>
+										<ion-input type="text" [(ngModel)]="todo.direccion" name="direccion" placeholder="{{ result.direccion }}"></ion-input>
+									</ion-item>
+
+									<ion-item>
+										<ion-label color="primary" stacked>Teléfono </ion-label>
+										<ion-input type="text"  [(ngModel)]="todo.telefono_local" name="telefono_local" placeholder="{{ result.telefono_local }}" ></ion-input>
+									</ion-item>
+
+									<ion-item>
+										<ion-label color="primary" stacked>Horarios apertura </ion-label>
+										<ion-input type="text" [(ngModel)]="todo.horarios" name="horarios" placeholder="{{ result.horarios }}" ></ion-input>
+									</ion-item>
+																	
+									<ion-item>
+										<ion-label color="primary" stacked>Promociones </ion-label>
+										<ion-textarea rows="3" [(ngModel)]="todo.promociones" name="promociones" placeholder="{{ result.promociones }}" ></ion-textarea>
+									</ion-item>
+
+									<ion-item>
+										<ion-label>Local abierto</ion-label>
+										<ion-checkbox  checked="true" [(ngModel)]="todo.local_abierto" name="local_abierto"></ion-checkbox>
+									</ion-item>
+								
+									<ion-item>
+										<ion-label>Cocina abierta</ion-label>
+										<ion-checkbox checked="false" [(ngModel)]="todo.cocina_abierta" name="cocina_abierta"></ion-checkbox>
+									</ion-item>
+									
+									
+									<button ion-button type="submit" block>Guardar Datos</button>
+							</form>
+								
+<!--
+					
+						<form [formGroup]="onYourRestaurantForm"  class="list-form" (ngSubmit)="submitdata()">
 							<ion-list margin-bottom>
-								<ion-item>
-									<ion-label>Complement with my account/profile data:</ion-label>
-									<ion-checkbox formControlName="profiledata"></ion-checkbox>
-								</ion-item>
-								<p ion-text color="danger" class="text-1x has-error" *ngIf="onYourRestaurantForm.get('profiledata').touched && onYourRestaurantForm.get('profiledata').hasError('required')">This field is required</p>
 
 								<ion-item>
-									<ion-label color="primary" stacked>Restaurant title:</ion-label>
-									<ion-input type="text" placeholder="Type here..." formControlName="restaurantTitle"></ion-input>
+											<ion-label color="primary" stacked>Nombre Local </ion-label>
+											<ion-input type="text" placeholder="{{ result.nombre_local }}" formControlName="restaurantTitle"></ion-input>
 								</ion-item>
-								<p ion-text color="danger" class="text-1x has-error" *ngIf="onYourRestaurantForm.get('restaurantTitle').touched && onYourRestaurantForm.get('restaurantTitle').hasError('required')">This field is required</p>
 
 								<ion-item>
-									<ion-label color="primary" stacked>Restaurant Address:</ion-label>
-									<ion-input type="text" placeholder="Type here..." formControlName="restaurantAddress"></ion-input>
+										<ion-label color="primary" stacked>Direccion </ion-label>
+										<ion-input type="text" placeholder="{{ result.direccion }}" formControlName="restaurantTitle"></ion-input>
 								</ion-item>
-								<p ion-text color="danger" class="text-1x has-error" *ngIf="onYourRestaurantForm.get('restaurantAddress').touched && onYourRestaurantForm.get('restaurantAddress').hasError('required')">This field is required</p>
 
 								<ion-item>
-									<ion-label color="primary" stacked>Restaurant Type:</ion-label>
-									<ion-select formControlName="restaurantType">
-										<ion-option value="house">Pasta</ion-option>
-										<ion-option value="mansion">Pizza</ion-option>
-										<ion-option value="Apartment">Fast Food</ion-option>
-										<ion-option value="comroom">Street Food</ion-option>
-										<ion-option value="farm">Barbecue</ion-option>
-										<ion-option value="farm">Veggie</ion-option>
-									</ion-select>
+										<ion-label color="primary" stacked>Teléfono </ion-label>
+										<ion-input type="text" placeholder="{{ result.telefono_local }}" formControlName="restaurantTitle"></ion-input>
 								</ion-item>
+
+								<ion-item>
+										<ion-label color="primary" stacked>Horarios apertura </ion-label>
+										<ion-input type="text" placeholder="{{ result.horarios }}" formControlName="restaurantTitle"></ion-input>
+								</ion-item>
+																	
+								<ion-item>
+										<ion-label color="primary" stacked>Promociones </ion-label>
+										<ion-textarea rows="3" placeholder="{{ result.promociones }}" formControlName="restaurantTitle"></ion-textarea>
+								</ion-item>
+
+								<ion-item>
+									<ion-label>Local abierto</ion-label>
+									<ion-checkbox formControlName="profiledata" checked="true"></ion-checkbox>
+								</ion-item>
+								
+								<ion-item>
+										<ion-label>Cocina abierta</ion-label>
+										<ion-checkbox checked="false"></ion-checkbox>
+								</ion-item>
+									
 
 
 							</ion-list>
 
 							<div padding-vertical>
-								<h5 ion-text color="dark" margin-bottom class="fw500">Add Images of Restaurant <span ion-text class="fw300">(Max. 5)</span></h5>
+								<h5 ion-text color="dark" margin-bottom class="fw500">Imágenes<span ion-text class="fw300"></span></h5>
 								<button ion-button icon-only color="light">
 									<ion-icon name="photos" color="dark"></ion-icon>
 								</button>
@@ -76,56 +135,13 @@
 								</button>
 							</div>
 
-							<div padding-vertical>
-								<h5 ion-text color="dark" margin-bottom class="fw500">Add Dishes</h5>
-
-								<ion-list margin-bottom>
-									<ion-item>
-										<ion-label color="primary" stacked>Dish Name:</ion-label>
-										<ion-input type="text" placeholder="Type here..."></ion-input>
-									</ion-item>
-									<ion-item>
-										<ion-label color="primary" stacked>Dish Type:</ion-label>
-										<ion-select formControlName="restaurantType">
-											<ion-option value="house">Pasta</ion-option>
-											<ion-option value="mansion">Pizza</ion-option>
-											<ion-option value="Apartment">Fast Food</ion-option>
-											<ion-option value="comroom">Street Food</ion-option>
-											<ion-option value="farm">Barbecue</ion-option>
-											<ion-option value="farm">Veggie</ion-option>
-										</ion-select>
-									</ion-item>
-									<ion-item>
-										<ion-label color="primary" stacked>Dish Ingredients:</ion-label>
-										<ion-textarea rows="5" placeholder="Type here..."></ion-textarea>
-									</ion-item>
-									<ion-item>
-										<ion-label color="primary" stacked>Dish Price:</ion-label>
-										<ion-input type="text" placeholder="Type here..."></ion-input>
-									</ion-item>
-									<ion-item>
-										<h6 ion-text color="dark" margin-bottom class="fw500">Add Images of Dish <span ion-text class="fw300">(Max. 5)</span></h6>
-										<button ion-button icon-only color="light">
-											<ion-icon name="photos" color="dark"></ion-icon>
-										</button>
-										<button ion-button icon-only color="light">
-											<ion-icon name="photos" color="dark"></ion-icon>
-										</button>
-										<button ion-button icon-only color="light">
-											<ion-icon name="photos" color="dark"></ion-icon>
-										</button>
-										<button ion-button icon-only color="light">
-											<ion-icon name="photos" color="dark"></ion-icon>
-										</button>
-										<button ion-button icon-only color="light">
-											<ion-icon name="photos" color="dark"></ion-icon>
-										</button>
-									</ion-item>
-								</ion-list>
-							</div>
-
-							<button ion-button block color="dark" (click)="sendData()" [disabled]="!onYourRestaurantForm.valid">Register</button>
+				
+							
+							<button ion-button block color="dark" (click)="submit()" >Guardar Datos</button>
 						</form>
+
+						 type="submit"	[disabled]="!onYourRestaurantForm.valid" 
+					-->
 					</ion-card-content>
 				</ion-card>
 

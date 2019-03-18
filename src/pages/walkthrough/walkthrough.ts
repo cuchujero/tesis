@@ -52,7 +52,7 @@ export class WalkthroughPage {
   }
 
   openHomePage() {
-  	this.navCtrl.setRoot('page-home');
+  	this.navCtrl.setRoot('page-authusu');
   }
 
   openAuthPage() {

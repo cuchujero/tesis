@@ -10,7 +10,9 @@ export interface MenuItem {
 @Component({
     templateUrl: 'app.html'
 })
+
 export class foodIonicApp {
+    
     @ViewChild(Nav) nav: Nav;
 
   	tabsPlacement: string = 'bottom';
@@ -20,6 +22,24 @@ export class foodIonicApp {
     showMenu: boolean = true;
 
     homeItem: any;
+
+    homeadmItem: any;
+
+    homeusuItem: any;
+
+    mapaItem: any;
+
+    reservausuItem: any;
+
+    comentariousuItem: any;
+
+    comentarioadmItem: any;
+
+    historialusuItem: any;
+
+    historialadmItem: any;
+
+    localinfoItem: any;
 
     initialItem: any;
 
@@ -35,18 +55,30 @@ export class foodIonicApp {
 
     helpMenuItems: Array<MenuItem>;
 
+
     constructor(public platform: Platform) {
         this.initializeApp();
 
         this.homeItem = { component: 'page-home' };
         this.messagesItem = { component: 'page-message-list'};
 
+        
+        this.homeusuItem = { component: 'page-home-usu' };
+        this.homeadmItem = { component: 'page-home-adm' };
+        this.localinfoItem =  { component: 'page-local-info' };
+        this.mapaItem = { component: 'page-mapa' };
+        this.reservausuItem = { component: 'page-reserva-usu' };
+        this.comentariousuItem = { component: 'page-comentario-usu' };
+        this.comentarioadmItem = { component: 'page-comentario-adm' };
+        this.historialusuItem = { component: 'page-historial-usu' };
+        this.historialadmItem = { component: 'page-historial-adm' };
 
         this.appMenuItems = [
             {title: 'Restaurants', component: 'page-restaurant-list', icon: 'home'},
             {title: 'Dish List', component: 'page-dish-list', icon: 'pizza'},
             {title: 'Nearby', component: 'page-nearby', icon: 'compass'},
             {title: 'By Category', component: 'page-category', icon: 'albums'},
+            {title: 'Rubros', component: 'page-rubros', icon: 'albums'},
             {title: 'Latest Orders', component: 'page-orders', icon: 'list-box'},
             {title: 'Cart', component: 'page-cart', icon: 'cart'},
 			{title: 'Favorite Restaurants', component: 'page-favorite-list', icon: 'heart'},

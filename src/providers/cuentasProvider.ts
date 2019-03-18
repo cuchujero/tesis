@@ -7,7 +7,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class Cuentas {
 
-    result:any=[];
+    //result:any=[];
 
 
     constructor(public http: HttpClient) {
@@ -16,12 +16,17 @@ export class Cuentas {
 
     getRemoteData(){
 
+
+        return  this.http.get("/api_tesis/get_cuenta.php");
+        
+        /*
         
         this.http.get("/api_tesis/get_cuenta.php").subscribe( data => {
             this.result=data;
            // console.log(data)
         
         });
+          */
         
         /*
             let promise = new Promise((resolve, reject) => {

@@ -1,0 +1,21 @@
+
+    <ion-header>
+
+
+    <ion-navbar class="navbar2" color ="primary">
+    
+    </ion-navbar>
+    
+    </ion-header>
+    
+    <ion-content class="no-scroll">
+      
+    <super-tabs class="ss" tabsPlacement="top" toolbarBackground="primary" toolbarColor="light" indicatorColor="light"
+    (tabSelec)="onTabSelected($event)">
+    <super-tab *ngFor ="let page2 of pages2" [root]="page2.pageName" [title]="page2.title" [icon]="page2.icon" [id]="page2.id"> </super-tab>
+   
+    </super-tabs>
+     
+    
+    </ion-content>
+    

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { IonicStorageModule } from '@ionic/storage';
@@ -20,14 +21,31 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Keyboard } from '@ionic-native/keyboard';
 import { Cuentas } from '../providers/cuentasProvider';
+import { Local } from '../providers/localProvider';
+import { Usuario } from  '../providers/usuarioProvider';
+import { Imagen } from  '../providers/imagenProvider';
+import { Reserva } from  '../providers/reservaProvider';
+import { Comentario } from  '../providers/comentariosProvider';
+import { SuperTabsModule } from 'ionic2-super-tabs';
+
+//import { CategoryPage } from '../pages/category/category';
+
+// import { HomeAdmPage} from '../pages/home-adm/home-adm';
+
+// import { HomeUsuPage} from '../pages/home-usu/home-usu';
+
+
 
 @NgModule({
   declarations: [
-    foodIonicApp
+    foodIonicApp,
+   // HomeAdmPage,
   ],
   imports: [
-    BrowserModule,
     HttpClientModule,
+    HttpModule,
+    BrowserModule,
+    SuperTabsModule.forRoot(),
     IonicModule.forRoot(foodIonicApp, {
     	preloadModules: true,
       scrollPadding: false,
@@ -45,7 +63,8 @@ import { Cuentas } from '../providers/cuentasProvider';
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    foodIonicApp
+    foodIonicApp,
+    // HomeAdmPage,
   ],
   providers: [
     StatusBar,
@@ -53,11 +72,12 @@ import { Cuentas } from '../providers/cuentasProvider';
     Keyboard,
     RestaurantService,
     DishService,
+    HttpClientModule,
     CategoryService,
     MessageService,
     CartService,
     OrdersService,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}, Cuentas
+    {provide: ErrorHandler, useClass: IonicErrorHandler}, Cuentas, Local, Usuario, Imagen, Reserva, Comentario
   ]
 })
 export class AppModule {}

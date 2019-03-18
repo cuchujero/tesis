@@ -23,6 +23,24 @@ export class foodIonicApp {
 
     homeItem: any;
 
+    homeadmItem: any;
+
+    homeusuItem: any;
+
+    comentariousuItem: any;
+    
+    comentarioadmItem: any;
+
+    historialusuItem: any;
+
+    historialadmItem: any;
+
+    localinfoItem: any;
+
+    mapaItem: any;
+
+    reservausuItem: any;
+
     initialItem: any;
 
     messagesItem: any;
@@ -42,6 +60,16 @@ export class foodIonicApp {
 
         this.homeItem = { component: 'page-home' };
         this.messagesItem = { component: 'page-message-list'};
+
+        this.homeusuItem = { component: 'page-home-usu' };
+        this.homeadmItem = { component: 'page-home-adm' };
+        this.localinfoItem =  { component: 'page-local-info' };
+        this.mapaItem = { component: 'page-mapa' };
+        this.reservausuItem = { component: 'page-reserva-usu' };        
+        this.comentariousuItem = { component: 'page-comentario-usu' };
+        this.comentarioadmItem = { component: 'page-comentario-adm' };
+        this.historialusuItem = { component: 'page-historial-usu' };
+        this.historialadmItem = { component: 'page-historial-adm' };
 
 
         this.appMenuItems = [

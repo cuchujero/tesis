@@ -1,0 +1,26 @@
+.local-info {
+	.item {
+		padding-left: 0;
+		&.item-block {
+			.item-inner {
+			  border-style: solid;
+			  border-width: 1px;
+			  border-color: transparent;
+			  border-bottom-color: rgba(205, 30, 55, .2);
+			}
+		}
+	}
+
+
+	.center {
+		display: block !important;
+		margin-left: auto !important;
+		margin-right: auto !important;
+		width: 50% !important;
+		text-align:center !important;
+		justify-content: center !important;
+		align-content: center !important;
+	}
+
+
+}

@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title style="text-align: center !important;">
+      <span ion-text>Mapa</span>
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="lightest-bg">
+
+<!-- <div padding *ngIf="from !== 'home'">
+  <ion-segment [(ngModel)]="proptype">
+    <ion-segment-button value="">
+      All
+    </ion-segment-button>
+    <ion-segment-button value="sale">
+      For Sale
+    </ion-segment-button>
+    <ion-segment-button value="rent">
+      For Rent
+    </ion-segment-button>
+  </ion-segment>
+</div> -->
+
+  <div id="mapa-map" class="mapa-map">
+		<agm-map [latitude]="lat" [longitude]="lng" [zoom]="15">
+			<agm-marker  [latitude]="lat" [longitude]="lng">
+
+			</agm-marker>
+		</agm-map>
+	</div>
+
+</ion-content>

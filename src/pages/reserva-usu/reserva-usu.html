@@ -1,0 +1,81 @@
+<ion-header>
+		<ion-navbar  color="primary">
+			<button ion-button menuToggle>
+				<ion-icon name="menu"></ion-icon>
+			</button>
+			<ion-title style="text-align: center !important;"> 
+				Solicitud de Reserva
+			</ion-title>
+		</ion-navbar>
+	
+	</ion-header > 
+
+
+
+<ion-content class="reserva-usu lightest-bg">
+
+	<ion-grid no-padding fixed>
+		<ion-row no-padding>
+			<ion-col>
+				<ion-card class="primary-bg">
+					<ion-card-content>
+						<p class="text-white">Datos del local</p>
+					</ion-card-content>
+				</ion-card>
+
+				<ion-card>
+					<ion-card-content>
+
+
+
+
+
+							<form (ngSubmit)="solicitar_reserva()">
+
+								   <ion-item>
+											<ion-label color="primary" stacked>Nombre</ion-label>
+											<ion-input type="text" [(ngModel)]="todo2.nombre_reserva" name="nombre_reserva" ></ion-input>
+								   </ion-item>
+
+									
+									<ion-item>
+											<ion-label color="primary" stacked>Fecha deseada</ion-label>
+											<ion-input type="text" [(ngModel)]="todo2.fecha" name="fecha" ></ion-input>
+								   </ion-item>
+
+								   
+								   <ion-item>
+										<ion-label color="primary" stacked>Hora de reserva</ion-label>
+										<ion-input type="text" [(ngModel)]="todo2.hora" name="cantidad_personas" ></ion-input>
+								   </ion-item>
+
+								   <ion-item>
+										<ion-label color="primary" stacked>Cantidad de personas</ion-label>
+										<ion-input type="text" [(ngModel)]="todo2.cantidad_personas" name="cantidad_personas" ></ion-input>
+								   </ion-item>
+								   
+								   <ion-item>
+										<ion-label color="primary" stacked>Teléfono</ion-label>
+										<ion-input type="text" [(ngModel)]="todo2.telefono_usuario" name="telefono_usuario" ></ion-input>
+							 	   </ion-item>
+
+									<ion-item>
+											<ion-label color="primary" stacked>Mensaje libre</ion-label>
+											<ion-input type="text" [(ngModel)]="todo2.comentario_usuario" name="comentario_usuario" ></ion-input>
+									</ion-item>
+
+									
+									<button ion-button type="submit" block>Enviar Solicitud</button>
+							</form>
+
+						
+				
+					</ion-card-content>
+				</ion-card>
+
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+
+</ion-content>
+	

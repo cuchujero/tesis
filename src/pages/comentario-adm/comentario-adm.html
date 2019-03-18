@@ -1,0 +1,43 @@
+<ion-header>
+		<ion-navbar color="primary">
+			<button ion-button menuToggle>
+				<ion-icon name="menu"></ion-icon>
+			</button>
+			<ion-title style="text-align: center !important;">
+				<span ion-text>Comentarios</span>
+			</ion-title>
+		</ion-navbar>
+	</ion-header>
+	
+	
+	
+	<ion-content class="lightest-bg">
+	
+		<ion-grid no-padding fixed>
+			<ion-row no-padding>
+				<ion-col>
+					<ion-list>
+								
+					<ion-list ion-row padding-horizontal>
+						
+						<ion-item *ngFor="let resul of result">
+					
+					<!--
+						<ion-thumbnail item-start>
+							<img src="{{dish.picture}}">
+						</ion-thumbnail>
+					-->
+						<h2 ion-text color="dark" class="fw500">{{resul.texto_comentario}}</h2>
+						<ion-badge>
+						<ion-icon name="star"> {{resul.puntuacion}}</ion-icon> 
+						</ion-badge>
+					
+					</ion-item>
+					</ion-list>
+					</ion-list>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+	
+	</ion-content>
+	

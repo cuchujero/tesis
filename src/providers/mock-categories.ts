@@ -1,26 +1,38 @@
 let categories: Array<any> = [
     {
         id: 1,
-        name: "Pizza",
-        picture: "assets/img/restaurants/restaurant01.jpg",
+        name: "Restaurantes",
+        picture: "assets/img/rubros/restaurant3.jpg", //restaurant
         quantity: 41
     },
     {
         id: 2,
-        name: "Pasta",
-        picture: "assets/img/restaurants/restaurant02.jpg",
+        name: "Bares",
+        picture: "assets/img/rubros/bar.jpg",  // bar5
         quantity: 64
     },
     {
         id: 3,
-        name: "Variable",
-        picture: "assets/img/restaurants/restaurant03.jpg",
+        name: "Boliches",
+        picture: "assets/img/rubros/boliche.jpg",   //boliche2
         quantity: 64
     },
     {
         id: 4,
-        name: "Barbecue",
-        picture: "assets/img/restaurants/restaurant04.jpg",
+        name: "Casinos",
+        picture: "assets/img/rubros/casino.jpg",
+        quantity: 28
+    },
+    {
+        id: 5,
+        name: "Cines",
+        picture: "assets/img/rubros/cine.jpg",
+        quantity: 28
+    },
+    {
+        id: 6,
+        name: "Postres",
+        picture: "assets/img/rubros/postre.jpg",
         quantity: 28
     }
 ];

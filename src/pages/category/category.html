@@ -4,22 +4,21 @@
     <button ion-button menuToggle>
         <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Category</ion-title>
+    <ion-title style="text-align: center;">Rubros</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-<ion-content>
+<ion-content class="no-scroll">
 
 	<div class="card-background-page">
 
-	<ion-grid no-padding>
-		<ion-row no-padding>
-			<ion-col col-12 col-md-6 *ngFor="let category of categories">
+	<ion-grid style="margin-top:3.5%;" >
+		<ion-row >
+			<ion-col col-8 col-lg-3 *ngFor="let category of categories">
 				<ion-card tappable (click)="openRestaurantListPage(category.name)">
 					<img [src]="category.picture" />
 					<div class="card-title">{{category.name}}</div>
-					<div class="card-subtitle">{{category.quantity}} Restaurants</div>
 				</ion-card>
 			</ion-col>
 		</ion-row>

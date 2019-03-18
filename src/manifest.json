@@ -1,6 +1,6 @@
 {
-  "name": "foodIonic",
-  "short_name": "foodIonic",
+  "name": "Bricker",
+  "short_name": "Bricker",
 	"start_url": "./?utm_source=web_app_manifest",
 	"orientation": "portrait",
 	"display": "fullscreen",

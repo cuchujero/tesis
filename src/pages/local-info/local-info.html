@@ -1,0 +1,79 @@
+<ion-header>
+    <ion-navbar  color="primary">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title style="text-align: center !important;"> 
+            Información Local 
+        </ion-title>
+    </ion-navbar>
+
+</ion-header > 
+
+
+
+<ion-content class="your-restaurant lightest-bg" class="center"> <!-- mirar si sacarle center -->
+
+	<ion-grid>
+		<ion-row >
+			<ion-col>
+				<ion-card class="primary-bg">
+					<ion-card-content>
+						<p class="text-white">Local: {{result.nombre_local}}</p>
+					</ion-card-content>
+				</ion-card>
+
+				<ion-card>
+					<ion-card-content>
+
+						<ion-list ion-row padding-horizontal>	
+							<button ion-col *ngFor="let resul2 of result2" col-12 col-md-2 class="center">
+											<img src="{{resul2.ruta_imagen}}">	
+							</button>			
+						</ion-list>
+							        <!-- <img  *ngFor="let resul2 of result2" src="{{resul2.ruta_imagen}}">	 -->
+
+									<ion-item>
+											<ion-label color="primary" stacked>Direccion </ion-label>
+											<ion-label>{{result.direccion}}</ion-label> 
+									</ion-item>
+
+									
+									<ion-item>
+											<ion-label color="primary" stacked>Teléfono </ion-label>
+											<ion-label>{{result.telefono_local}}</ion-label> 
+									</ion-item>
+									
+									
+									<ion-item>
+											<ion-label color="primary" stacked>Horarios </ion-label>
+											<ion-label>{{result.horarios}}</ion-label> 
+									</ion-item>
+									
+									
+									<ion-item>
+											<ion-label color="primary" stacked>Promociones </ion-label>
+											<ion-label>{{result.promociones}}</ion-label> 
+									</ion-item>
+
+
+									<ion-item>
+											<ion-label color="primary" stacked>Local Abierto</ion-label>
+											<ion-label>{{result.abierto}}</ion-label> 
+									</ion-item>
+						
+
+									<ion-item>
+											<ion-label color="primary" stacked>Cocina Abierta</ion-label>
+											<ion-label>{{result.cocina_abierta}}</ion-label> 
+									</ion-item>
+
+
+					</ion-card-content>
+				</ion-card>
+
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+
+</ion-content>
