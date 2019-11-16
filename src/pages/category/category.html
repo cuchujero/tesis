@@ -1,22 +1,27 @@
 <ion-header>
 
-  <ion-navbar color="primary">
+  <ion-navbar class="dd" color="primary">
     <button ion-button menuToggle>
         <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title style="text-align: center;">Rubros</ion-title>
+		<ion-title class="titlerubros">Rubros</ion-title>
+		<ion-buttons end style="margin-top:2.3% !important;">
+				<button ion-button (click)="presentNotifications($event)" >
+						<ion-icon name="settings"></ion-icon>
+				</button>
+		</ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
-<ion-content class="no-scroll">
+<ion-content class="contrubros">
 
 	<div class="card-background-page">
 
-	<ion-grid style="margin-top:3.5%;" >
-		<ion-row >
+	<ion-grid style="margin-top:2.5%;" >
+		<ion-row>
 			<ion-col col-8 col-lg-3 *ngFor="let category of categories">
-				<ion-card tappable (click)="openRestaurantListPage(category.name)">
+				<ion-card tappable (click)="openRestaurantListPage(category.id)">
 					<img [src]="category.picture" />
 					<div class="card-title">{{category.name}}</div>
 				</ion-card>

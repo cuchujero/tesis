@@ -18,20 +18,23 @@
 			<ion-col>
 				<ion-list>
 							
-				<ion-list ion-row padding-horizontal>
-					<button ion-button style="background: #1b489b; margin-top:3%; margin-left:40%"> Agregar comentario </button>
-					<ion-item *ngFor="let resul of result">
+				<ion-list ion-row padding-horizontal  class="rowc">
+					<button ion-button (click)="ingresar_comentario()" style="background: #1b489b; margin-top:4% !important; margin-left:40%"> Agregar comentario </button>
+					<ion-item *ngFor="let resul of result" class="itemc">
 				
 				<!--
 					<ion-thumbnail item-start>
 						<img src="{{dish.picture}}">
 					</ion-thumbnail>
 				-->
-					<h2 ion-text color="dark" class="fw500">{{resul.texto_comentario}}</h2>
-					<ion-badge>
-					<ion-icon name="star"> {{resul.puntuacion}}</ion-icon> 
-					</ion-badge>
-				
+
+				<ion-list ion-row padding-horizontal>
+						<ion-badge class="badgec">
+								<ion-icon name="star"> {{resul.puntuacion}}</ion-icon> 
+						</ion-badge>
+				        <h2 ion-text color="dark" class="fw500">{{resul.texto_comentario}}</h2>
+					
+				</ion-list>
 				</ion-item>
 				</ion-list>
 				</ion-list>

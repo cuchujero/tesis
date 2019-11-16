@@ -3,25 +3,25 @@ import {IonicPage, NavController} from 'ionic-angular';
 
 import {Reserva} from '../../providers/reservaProvider';
 import {HomeAdmPage} from '../home-adm/home-adm';
+
 import swal from 'sweetalert';
 
 
-
 @IonicPage({
-	name: 'page-historial-adm',
-	segment: 'historial-adm'
+	name: 'page-reservas-adm',
+	segment: 'reservas-adm'
 })
 
 @Component({
-    selector: 'page-historial-adm',
-    templateUrl: 'historial-adm.html'
+    selector: 'page-reservas-adm',
+    templateUrl: 'reservas-adm.html'
 })
-export class HistorialAdmPage {
+export class ReservasAdmPage {
 
     id_local=0;
 
 
-    constructor( public navCtrl: NavController, public reservaService: Reserva, public homeadmfun: HomeAdmPage) {
+    constructor(public navCtrl: NavController, public reservaService: Reserva, public homeadmfun: HomeAdmPage) {
        
     }
 
@@ -43,12 +43,12 @@ export class HistorialAdmPage {
     }
 
     confirmar_reserva(){
-       swal("Reserva confirmada!", "", "success");
+        swal("Reserva confirmada!", "", "success");
     }
 
     rechazar_reserva(){
-
         
     }
+
 
 }

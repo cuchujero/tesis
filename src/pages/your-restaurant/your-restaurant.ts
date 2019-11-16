@@ -44,8 +44,38 @@ export class YourRestaurantPage implements OnInit {
 
   }
 
-  
+    
+  result:any=[];
   result2:any=[];
+
+  laux="";
+  caux="";
+
+
+  ionViewDidLoad(){
+    
+    this.id_local=this.homeadmfun.id_return();
+
+    //console.log(this.id);
+
+    
+    this.localService.getRemoteData(this.id_local).subscribe(data =>{
+    this.result=data;
+    this.laux=this.result.abierto;
+    this.caux=this.result.cocina_abierta;
+    });
+
+  }
+
+  cambio_local_abierto(e:any){
+    this.laux=e.checked;
+  }
+
+  
+  cambio_cocina_abierta(e:any){
+    this.caux=e.checked;
+  }
+
 
   enviar_formulario(){
     
@@ -57,8 +87,6 @@ export class YourRestaurantPage implements OnInit {
 
 
     //let postData = new FormData();
-    
-    let postData = this.todo;
 
     //console.log(postData);
 
@@ -77,29 +105,21 @@ export class YourRestaurantPage implements OnInit {
     //this.http.get("/api_tesis/set_local_datos.php?+nombre_local="+ this.todo[this.nombre_local]);
 
 
-    this.id_local=this.homeadmfun.id_return();
+    let postData = this.todo;
 
-      if (this.todo["local_abierto"]==true){
-        this.l_a=1;
-      }
-      else{
-        this.l_a=0;
-      }
 
-      if (this.todo["cocina_abierta"]==true){
-        this.c_a=1;
-      }
-      else{
-        this.c_a=0;
-      }
-    
-    this.localService.SetData(this.id_local,this.todo["nombre_local"],this.todo["direccion"],this.todo["telefono_local"],this.todo["horarios"],this.todo["promociones"],this.l_a,this.c_a).subscribe(data =>{
+    this.localService.SetData(this.id_local,this.todo["nombre_local"],this.todo["direccion"],this.todo["telefono_local"],this.todo["horarios"],this.todo["promociones"],this.laux,this.caux).subscribe(data =>{
              
       this.result2=data;
       alert("datos guardados exitosamente");
+
+      
+     this.ionViewDidLoad();
     
      });
       
+     
+     
   }
 
 
@@ -109,24 +129,6 @@ export class YourRestaurantPage implements OnInit {
   
 
   
-  result:any=[];
-
-
-  ionViewDidLoad(){
-    
-    this.id_local=this.homeadmfun.id_return();
-
-    //console.log(this.id);
-
-    
-    this.localService.getRemoteData(this.id_local).subscribe(data =>{
-    this.result=data;
-      
-    console.log(this.result); 
-  
-    });
-
-  }
 
 
   ngOnInit() {

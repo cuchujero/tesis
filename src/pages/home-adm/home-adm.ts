@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, PopoverController } from 'ionic-angular';
 import { SuperTabs } from 'ionic2-super-tabs';
 import { ViewChild } from '@angular/core';
 
@@ -17,7 +17,7 @@ export class HomeAdmPage {
   // time
   pages = [
     { pageName: 'page-your-restaurant', title: 'Información', icon:'settings', id: 'newsTab'},
-    { pageName: 'page-message-list', title: 'Reservas', icon:'clock', id: 'newsTab2'},
+    { pageName: 'page-reservas-adm', title: 'Reservas', icon:'clock', id: 'newsTab2'},
     { pageName: 'page-historial-adm', title: 'Registros', icon:'clipboard', id: 'newsTab3'},
     { pageName: 'page-comentario-adm', title: 'Comentarios', icon:'contacts', id: 'newsTab4'}
 ];
@@ -27,7 +27,7 @@ selectedTab = 0;
 
 @ViewChild(SuperTabs) superTabs: SuperTabs;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public popoverCtrl: PopoverController, public navParams: NavParams, private alertCtrl: AlertController) {
   }
 
 
@@ -48,6 +48,13 @@ selectedTab = 0;
 
   }
 
+
+  presentNotifications(myEvent) {
+    let popover = this.popoverCtrl.create('page-notifications');
+    popover.present({
+      ev: myEvent
+    });
+  }
 
 
   onTabSelected(ev: any){

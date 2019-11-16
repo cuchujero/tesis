@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,PopoverController } from 'ionic-angular';
 
 import {CategoryService} from '../../providers/category-service-mock';
 
@@ -16,7 +16,7 @@ export class CategoryPage {
 
 	categories: Array<any>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public service: CategoryService) {
+  constructor(public navCtrl: NavController, public popoverCtrl: PopoverController, public navParams: NavParams, public service: CategoryService) {
   	this.findAll();
 	}
 	
@@ -27,8 +27,9 @@ export class CategoryPage {
     return this.navParams.get('id_usuario');
   }
 
+
   ionViewDidLoad() {
-   
+  
   }
 
 	findAll() {
@@ -37,11 +38,19 @@ export class CategoryPage {
 	        .catch(error => alert(error));
 	}
 
-  openRestaurantListPage(proptype) {
-  // this.navCtrl.push('page-home',this.navParams.get('id_usuario')); 
- 
-		this.navCtrl.push('page-home', {'proptype': proptype, id_usuario: this.navParams.get('id_usuario') });   // envio el id del rubro
+  
+  presentNotifications(myEvent) {
+    let popover = this.popoverCtrl.create('page-notifications');
+    popover.present({
+      ev: myEvent
+    });
+  }
+
+  openRestaurantListPage(id_rubro) {
+
+		this.navCtrl.push('page-home', {'id_rubro': id_rubro, id_usuario: this.navParams.get('id_usuario') });   // envio el id del rubro
 		//this.navCtrl.push('page-home', {'proptype': proptype}, this.navParams.get('id_usuario'));
   }
 
+  
 }

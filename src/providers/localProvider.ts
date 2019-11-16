@@ -40,7 +40,6 @@ export class Local {
 
         var url= "/api_tesis/set_local_datos.php";
 
-
         return  this.http.get(url+"?"
         +p0+"="+id+"&"
         +p1+"="+nombre_local+"&"

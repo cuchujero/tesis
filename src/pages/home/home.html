@@ -4,27 +4,24 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title style="text-align: center">
-      <span ion-text class="fw700">Restaurantes</span>
+      <span ion-text class="fw700">Locales</span>
     </ion-title>
-    <ion-buttons end>
-			<button ion-button (click)="presentNotifications($event)">
-					<ion-icon name="settings"></ion-icon>
-				</button>
-    </ion-buttons>
-  </ion-navbar>
-<!--
-  <ion-toolbar color="primary">
-    <ion-searchbar [(ngModel)]="searchKey" (ionInput)="onInput($event)" (ionCancel)="onCancel($event)"></ion-searchbar>
-    <ion-buttons end>
-      <button ion-button (click)="openRestaurantFilterPage()">
-        <ion-icon name="options"></ion-icon>
-      </button>
-    </ion-buttons>
-	</ion-toolbar>
-	-->
+		<ion-buttons end>
+				<button ion-button (click)="openRestaurantFilterPage()">
+						<ion-icon name="options"></ion-icon>
+					</button>
+				<button ion-button (click)="presentNotifications($event)">
+						<ion-icon name="settings"></ion-icon>
+				</button>		
+		</ion-buttons>
+	</ion-navbar>
 </ion-header>
 
-<ion-content>
+
+
+
+
+<ion-content class="cont-locales">
 
 	<ion-grid no-padding fixed>
 		<br>
@@ -33,19 +30,26 @@
 
 		<ion-list ion-row padding-horizontal>
 		  <button ion-item ion-col *ngFor="let resul of result" (click)="local_seleccionado(resul)" col-12 col-md-6>
-		    <ion-thumbnail item-start>
+		     <ion-thumbnail item-start>
 
-					<!--
+				<!--
 					let restaurant of restaurants
 					{{restaurant.title}}
 					{{ restaurant.rating | number:'1.1' }}
+
+					*ngIf="resul2.confirmada==='1'"
+
+					
+				 {{devuelveImagen(resul.id_local)}}
 		        
-				 -->
-					<img src="{{result2.ruta_imagen}}">	
+				
+				-->
+
+					<img  src="{{resul.ruta_imagen}}">	
 		    </ion-thumbnail>
 		    <h3 ion-text color="dark" class="fw500">{{resul.nombre_local}}</h3>
-		    <ion-badge class="white-bg text-secondary" item-end>
-			<!--		<ion-icon name="star"></ion-icon> -->
+		 	  <ion-badge class="white-bg text-secondary">
+				<ion-icon name="star"> {{resul.prom}}</ion-icon> 
 				</ion-badge>
 		  </button>
 		</ion-list>

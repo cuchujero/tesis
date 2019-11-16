@@ -1,5 +1,12 @@
 page-walkthrough {
 
+  
+  .primary-bg .scroll-content{
+    overflow-y: visible  !important;
+ }
+
+ 
+
   .toolbar-background {
     background: color($colors, primary) !important;
     border-color: transparent;
@@ -13,7 +20,7 @@ page-walkthrough {
 
   
   .b_inicio2{
-    width: 40% !important;
+    width: 60% !important;
     margin-left: auto !important;
     margin-right: auto !important;
   }

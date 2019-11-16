@@ -9,6 +9,7 @@ import  'rxjs/add/operator/map';
 import { Local } from '../../providers/localProvider';
 import { HomeUsuPage } from '../home-usu/home-usu';
 import { Imagen } from '../../providers/imagenProvider';
+import { Video } from '../../providers/videoProvider';
 
 @IonicPage({
 	name: 'page-local-info',
@@ -36,7 +37,7 @@ export class LocalInfoPage implements OnInit {
 
   //data: Observable<any>;
 
-  constructor(private _fb: FormBuilder, public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController, public toastCtrl: ToastController, public localService: Local, public homeusufun: HomeUsuPage, public http: HttpClient, public imagenService: Imagen) {
+  constructor(private _fb: FormBuilder, public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController, public toastCtrl: ToastController, public localService: Local, public homeusufun: HomeUsuPage, public http: HttpClient, public imagenService: Imagen, public videoService: Video ) {
 
     //this.localService.getRemoteData(id);
     //this.homefun.id_return();
@@ -45,11 +46,12 @@ export class LocalInfoPage implements OnInit {
   }
 
   
-
   
   result:any=[];
   
   result2:any=[];
+
+  result3:any=[];
 
 
   ionViewDidLoad(){
@@ -71,11 +73,18 @@ export class LocalInfoPage implements OnInit {
       this.result2=data;
       });
 
+    this.videoService.getRemoteData_todos(this.id_local).subscribe(data =>{
+      this.result3=data;
+      });
+  
  
 
   }
 
-
+  imagenseleccionada(img){
+  
+  }
+  
   ngOnInit() {
     this.onYourRestaurantForm = this._fb.group({
       profiledata: [true, Validators.compose([

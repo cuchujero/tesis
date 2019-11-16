@@ -43,16 +43,16 @@ export class AuthUsuPage{
 
 
 
+  result2:any=[];
 
 login_usu() {
+
   let alert = this.alertCtrl.create({
     title: 'Ingresar Nombre',
-    //message: "Ingrese",
     inputs: [
       {
         name: 'username',
-        placeholder: 'Nombre o Alias',
-        type: 'email'
+        placeholder: 'Nombre o Alias', 
       },
     ],
     buttons: [
@@ -66,12 +66,57 @@ login_usu() {
       {
         text: 'Ingresar',
         handler: data => {
-          if (1==1){
-          //if (User.isValid(data.username, data.password)) {
-            // logged in!
+
+          if ((data.username)!="") {
+
+            const nombreusu=data.username;
+
+            this.usuarioService.GetData_usu().subscribe(data =>{
+
+              this.result2=data;       
+          
+              const busqueda_usu = (this.result2.find( (i) => i.nombre_usuario === nombreusu ));
+          
+        
+              if (busqueda_usu!=undefined) {
+                
+                this.navCtrl.setRoot('page-category',busqueda_usu);   
+
+              }
+              else{
+
+                
+                  let toast = this.toastCtrl.create({
+                    message: 'Usuario no encontrado',
+                    duration: 3000,
+                    position: 'bottom',
+                    cssClass: 'alerta',
+                    closeButtonText: 'OK',
+                    showCloseButton: true
+                  });
+                  toast.present();
+                
+                // return false;
+              }
+             
+          
+            });
+
           } else {
-            // invalid login
-            return false;
+
+            
+              let toast = this.toastCtrl.create({
+                message: 'Es necesario escribir un usuario',
+                duration: 3000,
+                position: 'bottom',
+                cssClass: 'alerta',
+                closeButtonText: 'OK',
+                showCloseButton: true
+              });
+
+              toast.present();
+            
+            // return false;
           }
         }
       }
@@ -97,7 +142,6 @@ generate_usu(){
 
     console.log(text);
 
-    
     this.usuarioService.InsertData(text).subscribe(data =>{
              
       this.result=data[0];

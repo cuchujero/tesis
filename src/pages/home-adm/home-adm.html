@@ -1,13 +1,21 @@
 
 <ion-header>
-
-
+        <ion-navbar class="navbar2" color ="primary" no-padding> 
+         <ion-buttons end>
+                <button ion-button (click)="presentNotifications($event)" >
+                        <ion-icon name="settings"></ion-icon>
+                </button>
+         </ion-buttons>
+        </ion-navbar>
 </ion-header>
 
 <ion-content class="no-scroll">
+
+
   
 <super-tabs tabsPlacement="top" toolbarBackground="primary" toolbarColor="light" indicatorColor="light"
 (tabSelec)="onTabSelected($event)">
+
 <super-tab *ngFor ="let page of pages" [root]="page.pageName" [title]="page.title" [icon]="page.icon" [id]="page.id"> </super-tab>
 
 </super-tabs>

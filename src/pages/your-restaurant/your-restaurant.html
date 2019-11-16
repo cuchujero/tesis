@@ -58,19 +58,101 @@
 										<ion-textarea rows="3" [(ngModel)]="todo.promociones" name="promociones" placeholder="{{ result.promociones }}" ></ion-textarea>
 									</ion-item>
 
-									<ion-item>
-										<ion-label>Local abierto</ion-label>
-										<ion-checkbox  checked="true" [(ngModel)]="todo.local_abierto" name="local_abierto"></ion-checkbox>
-									</ion-item>
-								
-									<ion-item>
-										<ion-label>Cocina abierta</ion-label>
-										<ion-checkbox checked="false" [(ngModel)]="todo.cocina_abierta" name="cocina_abierta"></ion-checkbox>
-									</ion-item>
 									
+									
+									
+									<div *ngIf="result.abierto==='1'">
+										<ion-item>
+											<ion-label>Local abierto</ion-label>
+											<ion-checkbox checked="true" (ionChange)="cambio_local_abierto($event)" name="local_abierto"></ion-checkbox>
+										</ion-item>	
+									</div>
+
+									<div *ngIf="result.abierto==='0'">
+											<ion-item>
+												<ion-label>Local abierto</ion-label>
+												<ion-checkbox  checked="false" (ionChange)="cambio_local_abierto($event)" name="local_abierto"></ion-checkbox>
+											</ion-item>	
+									</div>
+											 
+									
+									<div *ngIf="result.cocina_abierta==='1'">
+										<ion-item>
+											<ion-label>Cocina abierta</ion-label>
+											<ion-checkbox checked="true" (ionChange)="cambio_cocina_abierta($event)" name="cocina_abierta"></ion-checkbox>
+										</ion-item>
+									</div>
+
+									<div *ngIf="result.cocina_abierta==='0'">
+										<ion-item>
+											<ion-label>Cocina abierta</ion-label>
+											<ion-checkbox checked="false" (ionChange)="cambio_cocina_abierta($event)" name="cocina_abierta"></ion-checkbox>
+										</ion-item>
+									</div>
+
+
+
+
+
+
+
 									
 									<button ion-button type="submit" block>Guardar Datos</button>
 							</form>
+
+
+							
+
+
+							<div padding-vertical>
+										
+								<h5 ion-text color="dark" margin-bottom class="fw500">Imágenes<span ion-text class="fw300"></span></h5>
+								
+								<button ion-button (click)="getImage()" icon-only color="light">
+									<ion-icon name="photos" color="dark"></ion-icon>
+								</button>
+
+								<button ion-button icon-only color="light">
+									<ion-icon name="photos" color="dark"></ion-icon>
+								</button>
+
+								<button ion-button icon-only color="light">
+									<ion-icon name="photos" color="dark"></ion-icon>
+								</button>
+
+								<button ion-button icon-only color="light">
+									<ion-icon name="photos" color="dark"></ion-icon>
+								</button>
+
+								<button ion-button icon-only color="light">
+									<ion-icon name="photos" color="dark"></ion-icon>
+								</button>
+
+								<button ion-button icon-only color="light">
+									<ion-icon name="photos" color="dark"></ion-icon>
+								</button>
+
+							</div>
+
+
+							<div padding-vertical>
+								
+								<h5 ion-text color="dark" margin-bottom class="fw500">Videos<span ion-text class="fw300"></span></h5>
+								
+								<button ion-button icon-only color="light">
+									<ion-icon name="videocam" color="dark"></ion-icon>
+								</button>
+
+								<button ion-button icon-only color="light">
+									<ion-icon name="videocam" color="dark"></ion-icon>
+								</button>
+
+								<button ion-button icon-only color="light">
+									<ion-icon name="videocam" color="dark"></ion-icon>
+								</button>
+
+
+							</div>
 								
 <!--
 					
@@ -116,24 +198,7 @@
 
 							</ion-list>
 
-							<div padding-vertical>
-								<h5 ion-text color="dark" margin-bottom class="fw500">Imágenes<span ion-text class="fw300"></span></h5>
-								<button ion-button icon-only color="light">
-									<ion-icon name="photos" color="dark"></ion-icon>
-								</button>
-								<button ion-button icon-only color="light">
-									<ion-icon name="photos" color="dark"></ion-icon>
-								</button>
-								<button ion-button icon-only color="light">
-									<ion-icon name="photos" color="dark"></ion-icon>
-								</button>
-								<button ion-button icon-only color="light">
-									<ion-icon name="photos" color="dark"></ion-icon>
-								</button>
-								<button ion-button icon-only color="light">
-									<ion-icon name="photos" color="dark"></ion-icon>
-								</button>
-							</div>
+							
 
 				
 							

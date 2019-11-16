@@ -17,6 +17,8 @@ import {CategoryService} from "../providers/category-service-mock";
 import {CartService} from "../providers/cart-service-mock";
 import {OrdersService} from "../providers/orders-service-mock";
 
+
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Keyboard } from '@ionic-native/keyboard';
@@ -24,15 +26,23 @@ import { Cuentas } from '../providers/cuentasProvider';
 import { Local } from '../providers/localProvider';
 import { Usuario } from  '../providers/usuarioProvider';
 import { Imagen } from  '../providers/imagenProvider';
+import { Video } from  '../providers/videoProvider';
 import { Reserva } from  '../providers/reservaProvider';
 import { Comentario } from  '../providers/comentariosProvider';
-import { SuperTabsModule } from 'ionic2-super-tabs';
+import { Filtro } from  '../providers/filtrosProvider';
 
+import { SuperTabsModule } from 'ionic2-super-tabs';
+import { IonicImageViewerModule } from 'ionic-img-viewer';
+import { DatePicker } from '@ionic-native/date-picker/ngx';
+import { Ionic2RatingModule } from 'ionic2-rating';
+
+        
 //import { CategoryPage } from '../pages/category/category';
 
 // import { HomeAdmPage} from '../pages/home-adm/home-adm';
 
 // import { HomeUsuPage} from '../pages/home-usu/home-usu';
+
 
 
 
@@ -45,6 +55,8 @@ import { SuperTabsModule } from 'ionic2-super-tabs';
     HttpClientModule,
     HttpModule,
     BrowserModule,
+    IonicImageViewerModule,
+    Ionic2RatingModule,
     SuperTabsModule.forRoot(),
     IonicModule.forRoot(foodIonicApp, {
     	preloadModules: true,
@@ -73,11 +85,12 @@ import { SuperTabsModule } from 'ionic2-super-tabs';
     RestaurantService,
     DishService,
     HttpClientModule,
+    DatePicker,
     CategoryService,
     MessageService,
     CartService,
     OrdersService,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}, Cuentas, Local, Usuario, Imagen, Reserva, Comentario
+    {provide: ErrorHandler, useClass: IonicErrorHandler}, Cuentas, Local, Usuario, Imagen, Video, Reserva, Comentario, Filtro
   ]
 })
 export class AppModule {}

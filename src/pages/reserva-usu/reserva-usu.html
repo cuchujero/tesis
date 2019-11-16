@@ -14,6 +14,7 @@
 
 <ion-content class="reserva-usu lightest-bg">
 
+
 	<ion-grid no-padding fixed>
 		<ion-row no-padding>
 			<ion-col>
@@ -28,44 +29,63 @@
 
 
 
-
+						
 
 							<form (ngSubmit)="solicitar_reserva()">
 
 								   <ion-item>
-											<ion-label color="primary" stacked>Nombre</ion-label>
+											<ion-label color="primary" stacked>Nombre
+													<ion-icon name="contact" ></ion-icon>
+											</ion-label>
 											<ion-input type="text" [(ngModel)]="todo2.nombre_reserva" name="nombre_reserva" ></ion-input>
 								   </ion-item>
 
-									
+								   
 									<ion-item>
-											<ion-label color="primary" stacked>Fecha deseada</ion-label>
-											<ion-input type="text" [(ngModel)]="todo2.fecha" name="fecha" ></ion-input>
-								   </ion-item>
-
-								   
-								   <ion-item>
-										<ion-label color="primary" stacked>Hora de reserva</ion-label>
-										<ion-input type="text" [(ngModel)]="todo2.hora" name="cantidad_personas" ></ion-input>
-								   </ion-item>
-
-								   <ion-item>
-										<ion-label color="primary" stacked>Cantidad de personas</ion-label>
-										<ion-input type="text" [(ngModel)]="todo2.cantidad_personas" name="cantidad_personas" ></ion-input>
+											<ion-label color="primary" stacked>Fecha deseada
+												 <ion-icon name="calendar" ></ion-icon>
+											</ion-label>
+									
+											<ion-datetime type="text" displayFormat="DD/MM/YYYY" picker-format="DD-MMMM-YYYY" min="2019" max="2020" [(ngModel)]="todo2.fecha" name="fecha" cancelText=Cancelar doneText=Ingresar
+											month-names="Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre"
+											month-short-names="Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre"
+											>
+											
+										</ion-datetime> 
 								   </ion-item>
 								   
 								   <ion-item>
-										<ion-label color="primary" stacked>Teléfono</ion-label>
+										<ion-label color="primary" stacked>Hora de reserva
+												<ion-icon name="time" ></ion-icon>
+										</ion-label>
+										
+										<ion-datetime type="text" displayFormat="HH:mm" picker-format="HH:mm" min="12:00" max="22:30" [(ngModel)]="todo2.hora" name="hora" cancelText=Cancelar doneText=Ingresar>
+										</ion-datetime>
+								   </ion-item>
+
+								   <ion-item>
+										<ion-label color="primary" stacked>Cantidad de personas
+												<ion-icon name="people" ></ion-icon>
+										</ion-label>
+										<ion-input type="number" [(ngModel)]="todo2.cantidad_personas" name="cantidad_personas" ></ion-input>
+								   </ion-item>
+								   
+								   <ion-item>
+										<ion-label color="primary" stacked>Teléfono
+												<ion-icon name="call" ></ion-icon>
+										</ion-label>
 										<ion-input type="text" [(ngModel)]="todo2.telefono_usuario" name="telefono_usuario" ></ion-input>
 							 	   </ion-item>
 
 									<ion-item>
-											<ion-label color="primary" stacked>Mensaje libre</ion-label>
+											<ion-label color="primary" stacked>Mensaje libre
+													<ion-icon name="text" ></ion-icon>
+											</ion-label>
 											<ion-input type="text" [(ngModel)]="todo2.comentario_usuario" name="comentario_usuario" ></ion-input>
 									</ion-item>
 
 									
-									<button ion-button type="submit" block>Enviar Solicitud</button>
+									<button  ion-button icon-start block style="width: 40% !important; margin-left:31% !important; margin-top:3% !important;" type="submit" block>Enviar Solicitud</button>
 							</form>
 
 						

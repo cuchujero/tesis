@@ -2,12 +2,15 @@ import { Component} from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController, ToastController} from 'ionic-angular';
 import { HttpClient} from '@angular/common/http';
 
+
 import  'rxjs/add/operator/catch';
 import  'rxjs/add/operator/map';
 
 import { Local } from '../../providers/localProvider';
 import { HomeUsuPage } from '../home-usu/home-usu';
 import { Reserva } from '../../providers/reservaProvider';
+import { HistorialUsuPage } from '../historial-usu/historial-usu';
+
 
 
 @IonicPage({
@@ -35,19 +38,19 @@ export class ReservaUsuPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController, public toastCtrl: ToastController, public localService: Local, public reservaService: Reserva, public homeusufun: HomeUsuPage, public http: HttpClient) {
 
-
-
+   // public ddd: HistorialUsuPage 
   }
 
 
   
   
-  ionViewDidLoad(){  }
+  ionViewDidLoad(){ }
 
   
   result:any=[];
   result2:any=[];
 
+  
   solicitar_reserva(){
       
     let postData2 = this.todo2;
@@ -55,20 +58,26 @@ export class ReservaUsuPage {
     this.id_local=this.homeusufun.id_return_local();
     
     this.id_usuario=this.homeusufun.id_return_usuario();
-    
+
     this.reservaService.insertData(this.todo2["nombre_reserva"],this.todo2["fecha"],this.todo2["hora"],this.todo2["cantidad_personas"],this.todo2["telefono_usuario"],this.todo2["comentario_usuario"],this.id_usuario,this.id_local).subscribe(data =>{
              
-      this.result2=data;
+    this.result2=data;
 
-      alert("Su reserva fue enviada. Su solicitud será respondida por un responsable del local.");
-    
-     });
+    alert("Su reserva fue enviada.\nSu solicitud será respondida por un responsable del local.");
+  
+    this.actualizar_reservas();
+
+    });
       
   }
 
 
 
+  
 
+  actualizar_reservas(){
+  this.navCtrl.setRoot(this.navCtrl.getActive().component); 
+  }
   
   
 }

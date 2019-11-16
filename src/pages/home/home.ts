@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController, MenuController, ToastController, PopoverController, ModalController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, MenuController, Modal, ToastController, PopoverController, ModalController } from 'ionic-angular';
 
 import {RestaurantService} from '../../providers/restaurant-service-mock';
 
 import { Local } from '../../providers/localProvider';
 import { Imagen } from '../../providers/imagenProvider';
+import { Filtro } from '../../providers/filtrosProvider';
 
 @IonicPage({
 	name: 'page-home',
@@ -22,8 +23,10 @@ export class HomePage {
   restaurants: Array<any>;
   searchKey: string = "";
   yourLocation: string = "463 Beacon Street Guest House";
+  id_usuario=0;
+  id_rubro=0;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public menuCtrl: MenuController, public popoverCtrl: PopoverController, public locationCtrl: AlertController, public modalCtrl: ModalController, public toastCtrl: ToastController, public service: RestaurantService,public localService: Local, public imagenService: Imagen) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public menuCtrl: MenuController, public popoverCtrl: PopoverController, public locationCtrl: AlertController, public modalCtrl: ModalController, public toastCtrl: ToastController, public service: RestaurantService,public localService: Local, public imagenService: Imagen, public filtroService: Filtro) {
 		this.menuCtrl.swipeEnable(true, 'authenticated');
 		this.menuCtrl.enable(true);
 		this.findAll();
@@ -33,6 +36,7 @@ export class HomePage {
   
   result:any=[];
   result2:any=[];
+  result3:any=[];
   
 
   
@@ -49,10 +53,64 @@ export class HomePage {
   	this.navCtrl.push('page-restaurant-list', proptype);
   }
 
+
+
   openRestaurantFilterPage() {
-    let modal = this.modalCtrl.create('page-restaurant-filter');
-    modal.present();
+
+    this.filtroService.getRemoteData().subscribe(data =>{
+      
+			this.result3=data;
+
+    });
+  
+    const myModal: Modal = this.modalCtrl.create('page-restaurant-filter');
+  //  const myModal: Modal = this.modalCtrl.create('page-restaurant-filter', { datos: this.result3 });
+    myModal.present();
+
+
+
+    
+    //-----------------------------------------------------------------------------
+/*
+
+    // Recupero
+
+    
+    
+    myModal.onDidDismiss((data) => {
+
+      this.id_local=this.homeusufun.id_return_local();
+    
+      this.id_usuario=this.homeusufun.id_return_usuario();
+
+      this.comentariosService.insertData(data["comentario_usuario"],data["rate"],this.id_usuario,this.id_local).subscribe(data2 =>{
+             
+        this.result2=data2;
+
+        if (this.result2[0]=='F'){
+          alert("Usted ya realizo su comentario en este local");
+        }
+        else{
+          alert("Comentario Ingresado");
+        }
+      
+       });
+
+       this.ionViewDidLoad();
+     
+        
+    });
+
+
+*/
+
   }
+
+
+
+
+
+
 
   openNearbyPage() {
     this.navCtrl.push('page-nearby');
@@ -100,25 +158,26 @@ export class HomePage {
 	    this.findAll();
   }
   
-  devuelveImagen(){
-    
+  devuelveImagen(id_local){
+
   }
 
 	findAll() {
 
-
-    // probar donde esta el 1 con: { 'id': resul.id_local }
-    
-   this.localService.getRemoteDataLocalesporRubro(1).subscribe(data =>{
+    this.id_usuario = this.navParams.get('id_usuario');
+    this.id_rubro = this.navParams.get('id_rubro');
+   
+    this.localService.getRemoteDataLocalesporRubro(this.id_rubro).subscribe(data =>{
       this.result=data;
-      console.log(this.result);
+      // console.log("ver: " + JSON.stringify(this.result));
       });
 
-      
+  /*
     this.imagenService.getRemoteData_primera(1).subscribe(data =>{
-      this.result2=data;
-      console.log(this.result2);
-      });
+        this.result2=data;
+        console.log("eee " + this.result2);
+        });
+   */
 
 	    this.service.findAll()
 	        .then(data => this.restaurants = data)
@@ -164,7 +223,6 @@ export class HomePage {
   }
 
   presentNotifications(myEvent) {
-    console.log(myEvent);
     let popover = this.popoverCtrl.create('page-notifications');
     popover.present({
       ev: myEvent

@@ -26,13 +26,41 @@
 				<ion-card>
 					<ion-card-content>
 
-						<ion-list ion-row padding-horizontal>	
-							<button ion-col *ngFor="let resul2 of result2" col-12 col-md-2 class="center">
-											<img src="{{resul2.ruta_imagen}}">	
-							</button>			
-						</ion-list>
-							        <!-- <img  *ngFor="let resul2 of result2" src="{{resul2.ruta_imagen}}">	 -->
 
+					<!--
+					<ion-slides class="image-slider" loop="true" slidesPerView="3">
+
+						 <ion-slide *ngFor="let resul2 of result2">
+
+							<img src="{{resul2.ruta_imagen}}" class="thumb-img" imageViewer>	
+					
+						</ion-slide>		
+
+					</ion-slides>
+
+
+
+					 /*(click)="imagen_seleccionada(resul2)"*/
+					-->	
+
+
+						<ion-list ion-row padding-horizontal>	
+						
+						<button ion-col *ngFor="let resul2 of result2" col-12 col-md-2 class="center">
+								<img src="{{resul2.ruta_imagen}}" imageViewer>	
+						</button>		
+						
+						</ion-list>
+
+					</ion-card-content>
+				</ion-card>
+
+
+						<ion-card>
+								<ion-card-content>
+											
+
+							      
 									<ion-item>
 											<ion-label color="primary" stacked>Direccion </ion-label>
 											<ion-label>{{result.direccion}}</ion-label> 
@@ -68,6 +96,26 @@
 											<ion-label>{{result.cocina_abierta}}</ion-label> 
 									</ion-item>
 
+
+								</ion-card-content>
+							</ion-card>
+
+							
+							
+				<ion-card>
+						<ion-card-content>
+									
+						<ion-list ion-row padding-horizontal *ngFor="let resul3 of result3">	
+						
+						
+								<video controls="controls" preload="metadata"  webkit-playsinline="webkit-playsinline" class="videoPlayer">
+										<source src="{{resul3.ruta_video}}" />
+								</video>
+
+								
+
+						</ion-list>
+		
 
 					</ion-card-content>
 				</ion-card>

@@ -17,7 +17,10 @@ export class NotificationsPage {
     this.viewCtrl.dismiss();
   }
 
-  messages () {
-  	this.navCtrl.push('page-message-list');
+
+  cerrar_sesion(){  
+    this.viewCtrl.dismiss();
+    this.navCtrl.setRoot('page-walkthrough');
   }
+
 }

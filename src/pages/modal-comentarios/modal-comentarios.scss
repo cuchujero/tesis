@@ -1,21 +1,32 @@
+page-modal-comentarios,
+     
 
-.toast-container{
-      color: white !important;
-      background-color: rgb(82, 75, 67) !important;
-      
-      }
+.modal-estilo{
+  background: white !important;
+}
 
- .alerta .button-inner{
-      color: white !important;
-      }
+ul {
+  padding: 0px;
+
+  &.rating li {
+    padding: 5px 10px !important;
+    background: none;
+    color: #ffb400;
+
+    ion-icon {
+      font-size: 30px;
+    }
+  }
+}
+
+	
+.modal_estilo .scroll-content{
+  overflow-y: visible  !important;
+ }
 
 
 
-page-authusu,
-
-
-
-.authusu {
+.modal-comentario {
   .grid {
     padding: 0;
     .col {
@@ -25,15 +36,15 @@ page-authusu,
 
 
   .titulo_usu{
-    margin-top:4% !important;
+    margin-top:8% !important;
   }
 
   .boton_usu1{
-    margin-top:25% !important;
+    margin-top:35% !important;
   }
 
   .boton_usu2{
-    margin-top:9% !important;
+    margin-top:10% !important;
   }
 
 
@@ -56,7 +67,6 @@ page-authusu,
     display: flex;
     align-items: baseline;
     justify-content: center;
-    overflow-y: visible  !important;
 
     .auth-content {
       width: 80%;

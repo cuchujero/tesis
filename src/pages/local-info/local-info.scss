@@ -1,4 +1,22 @@
 .local-info {
+
+	.thumb-img{
+		padding: 2px;
+	}
+
+	
+
+	.image-slider{
+		
+		margin-left: 1% !important;
+		margin-right: 1% !important;
+	}
+
+	ion-slide.swiper-slide{
+		margin-left: 1% !important;
+		margin-right: 1% !important;
+	}
+
 	.item {
 		padding-left: 0;
 		&.item-block {

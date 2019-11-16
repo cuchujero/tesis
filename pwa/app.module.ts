@@ -18,7 +18,13 @@ import {OrdersService} from "../src/providers/orders-service-mock";
 import { HomeAdmPage } from '../src/pages/home-adm/home-adm';
 import { HomePage } from    '../src/pages/home/home';
 import { HomeUsuPage } from '../src/pages/home-usu/home-usu';
+import {HistorialUsuPage} from '../src/pages/historial-usu/historial-usu';
+
+import { NotificationsPage } from '../src/pages/notifications/notifications';
+
 import { SuperTabsModule } from 'ionic2-super-tabs';
+
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 
 
@@ -33,6 +39,7 @@ import { SuperTabsModule } from 'ionic2-super-tabs';
     HttpClientModule,
     HttpModule,
     BrowserModule,
+    SweetAlert2Module.forRoot(),
     SuperTabsModule.forRoot(),
     IonicModule.forRoot(foodIonicApp, {
 			preloadModules: true,
@@ -62,7 +69,8 @@ import { SuperTabsModule } from 'ionic2-super-tabs';
     CategoryService,
     MessageService,
     CartService,
-		OrdersService,
+    OrdersService,
+
     // { provide: LocationStrategy, useClass: PathLocationStrategy },
     // { provide: APP_BASE_HREF, useValue : '/' },
     {provide: ErrorHandler, useClass: IonicErrorHandler}

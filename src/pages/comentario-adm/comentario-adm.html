@@ -12,32 +12,33 @@
 	
 	
 	<ion-content class="lightest-bg">
-	
-		<ion-grid no-padding fixed>
-			<ion-row no-padding>
-				<ion-col>
-					<ion-list>
-								
-					<ion-list ion-row padding-horizontal>
+
+			<ion-grid no-padding fixed>
+				<ion-row no-padding>
+					<ion-col>
+						<ion-list>
+									
+						<ion-list ion-row padding-horizontal  class="rowc">
+							<ion-item *ngFor="let resul of result" class="itemc">
 						
-						<ion-item *ngFor="let resul of result">
-					
-					<!--
-						<ion-thumbnail item-start>
-							<img src="{{dish.picture}}">
-						</ion-thumbnail>
-					-->
-						<h2 ion-text color="dark" class="fw500">{{resul.texto_comentario}}</h2>
-						<ion-badge>
-						<ion-icon name="star"> {{resul.puntuacion}}</ion-icon> 
-						</ion-badge>
-					
-					</ion-item>
-					</ion-list>
-					</ion-list>
-				</ion-col>
-			</ion-row>
-		</ion-grid>
-	
-	</ion-content>
-	
+						<!--
+							<ion-thumbnail item-start>
+								<img src="{{dish.picture}}">
+							</ion-thumbnail>
+						-->
+		
+						<ion-list ion-row padding-horizontal>
+								<ion-badge class="badgec">
+										<ion-icon name="star"> {{resul.puntuacion}}</ion-icon> 
+								</ion-badge>
+								<h2 ion-text color="dark" class="fw500">{{resul.texto_comentario}}</h2>
+							
+						</ion-list>
+						</ion-item>
+						</ion-list>
+						</ion-list>
+					</ion-col>
+				</ion-row>
+			</ion-grid>
+		
+		</ion-content>

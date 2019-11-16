@@ -3,6 +3,7 @@ import {IonicPage, NavController} from 'ionic-angular';
 
 import {Reserva} from '../../providers/reservaProvider';
 import {HomeUsuPage} from '../home-usu/home-usu';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 
 @IonicPage({
@@ -27,9 +28,8 @@ export class HistorialUsuPage {
     result:any=[];
 
 
-    ionViewDidLoad() {
+    ionViewDidEnter() {
 
-        
     this.id_local=this.homeusufun.id_return_local();
     
     this.id_usuario=this.homeusufun.id_return_usuario();
@@ -42,7 +42,27 @@ export class HistorialUsuPage {
    
     }
 
+/*
+    ngAfterViewInit(){
+      
+    this.id_local=this.homeusufun.id_return_local();
+    
+    this.id_usuario=this.homeusufun.id_return_usuario();
+
+    this.reservaService.GetData_usu(this.id_local,this.id_usuario).subscribe(data =>{
+             
+        this.result=data;
+
+      
+       });
+    }
+*/
 
 
+actualizar_historial()
+{
+    this.navCtrl.setRoot(this.navCtrl.getActive().component); 
+}
 
 }
+

@@ -19,17 +19,17 @@ export class WalkthroughPage {
   slideList: Array<any> = [
     {
       title: "<strong>Bricker</strong>",
-      description: "No sabes donde reunirte a comer?. Encontra los restaurantes y bares cercanos con las mejores promociones.",
+      description: "No sabes donde reunirte a comer? Encontra los restaurantes y bares cercanos con las mejores promociones.",
       image: "assets/img/logo-intro1.png",
     },
     {
       title: "<strong>Bricker</strong>",
-      description: "No encontras un lugar comodo para beber con amigos?. Busca los que tengan tu trago o bebida predilecta",
+      description: "No encontras un lugar comodo para beber con amigos? Decidi a cual ir por sus fotos y comentarios",
       image: "assets/img/logo-intro2.png",
     },
     {
       title: "<strong>Bricker</strong>",
-      description: "Tampoco decidis en que parte encender tu noche?. Comparalos mirando sus fotos y elegi el mejor ",
+      description: "Tampoco sabes que hacer esta noche? Compara cada local y elegi el mejor",
       image: "assets/img/logo-intro3.png",
     }
   ];
@@ -52,11 +52,11 @@ export class WalkthroughPage {
   }
 
   openHomePage() {
-  	this.navCtrl.setRoot('page-authusu');
+  	this.navCtrl.push('page-authusu');
   }
 
   openAuthPage() {
-    this.navCtrl.setRoot('page-auth');
+    this.navCtrl.push('page-auth');
   }
 
   ionViewDidLoad() {

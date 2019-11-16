@@ -12,22 +12,32 @@ import { IonicPage, NavController } from 'ionic-angular';
 })
 
 export class RestaurantFilterPage {
-	minmaxprice: any;
-	radiusmiles: Number;
+
 
   constructor(public navCtrl: NavController) {
 
-  	this.radiusmiles = 1;
-
-		this.minmaxprice = {
-  		upper:500,
-  		lower:10
-  	};
 
   }
+
+	result:any=[];
+
+
+	
+  
+  ionViewDidLoad(){
+	 ;
+
+	}
 
   closeModal() {
     this.navCtrl.pop();
-  }
+	}
+
+
+	mostrar_filtros(){
+
+
+	}
+
 
 }

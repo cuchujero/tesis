@@ -10,6 +10,14 @@ export class Usuario {
     console.log('Accediendo a Usuario Provider');
   }
 
+
+ GetData_usu(){
+
+    var url = "/api_tesis/get_usu.php";
+    return  this.http.get(url);
+
+}
+
 InsertData(text){
 
   var url = "/api_tesis/ins_usu.php";

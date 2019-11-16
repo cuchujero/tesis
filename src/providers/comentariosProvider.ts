@@ -16,8 +16,20 @@ export class Comentario {
     }
 
     getRemoteData(id_local_fk){
+
         var url = "/api_tesis/get_comentario.php";
         return  this.http.get(url+"?"+"id_local_fk"+"="+ id_local_fk);
+    }
+
+    insertData(texto_comentario,puntuacion,id_usuario_fk,id_local_fk){
+        
+        var url = "/api_tesis/ins_comentario.php";
+        
+        return  this.http.get(url+"?"+
+        "texto_comentario"+"="+texto_comentario+
+        "&"+"puntuacion"+"="+puntuacion+
+        "&"+"id_usuario_fk"+"="+id_usuario_fk+
+        "&"+"id_local_fk"+"="+ id_local_fk); 
     }
 
 }

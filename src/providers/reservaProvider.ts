@@ -27,6 +27,16 @@ export class Reserva {
 
         var url = "/api_tesis/ins_reserva.php";
 
+        console.log(url+"?"
+        +p00+"="+nombre_reserva+"&"
+        +p0+"="+fecha+"&"
+        +p1+"="+hora+"&"
+        +p2+"="+cantidad_personas+"&"
+        +p3+"="+telefono_usuario+"&"
+        +p4+"="+comentario_usuario+"&"
+        +p5+"="+id_usuario+"&"
+        +p6+"="+id_local);
+
 
         return  this.http.get(url+"?"
         +p00+"="+nombre_reserva+"&"

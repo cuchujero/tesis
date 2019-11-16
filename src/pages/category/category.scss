@@ -1,12 +1,26 @@
 page-category {
-	.card-background-page {
-		
 
-		
-		.no-scroll .scroll-content{
-			overflow-y: visible  !important;
+	.contrubros{
+		background: #920c20 !important;
+	}
+	
+	.contrubros .scroll-content{
+		overflow-y: visible  !important;
+	 }
+
+	 .toolbar-title.toolbar-title-md {
+		 font-size: 35px !important;
+		 font-weight: bold !important;
 	 }
 	 
+	 .titlerubros{
+		text-align: center;
+		margin-top: 2.8%;
+	 }
+
+
+	.card-background-page {
+		
 
 	  ion-card {
 	  	margin: 0;

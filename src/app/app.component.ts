@@ -35,7 +35,11 @@ export class foodIonicApp {
 
     historialadmItem: any;
 
+    reservasadmItem: any;
+
     localinfoItem: any;
+
+    modalcomentarios: any;
 
     mapaItem: any;
 
@@ -70,7 +74,8 @@ export class foodIonicApp {
         this.comentarioadmItem = { component: 'page-comentario-adm' };
         this.historialusuItem = { component: 'page-historial-usu' };
         this.historialadmItem = { component: 'page-historial-adm' };
-
+        this.reservasadmItem = { component: 'page-reservas-adm' };
+        this.modalcomentarios = { component: 'page-modal-comentarios' };
 
         this.appMenuItems = [
             {title: 'Restaurants', component: 'page-restaurant-list', icon: 'home'},
