@@ -10,7 +10,7 @@ import { Local } from '../../providers/localProvider';
 import { HomeUsuPage } from '../home-usu/home-usu';
 import { Reserva } from '../../providers/reservaProvider';
 import { HistorialUsuPage } from '../historial-usu/historial-usu';
-
+import swal from 'sweetalert';
 
 
 @IonicPage({
@@ -63,8 +63,8 @@ export class ReservaUsuPage {
              
     this.result2=data;
 
-    alert("Su reserva fue enviada.\nSu solicitud será respondida por un responsable del local.");
-  
+    swal("Su reserva fue enviada", "Su solicitud será respondida por un responsable del local.");
+    
     this.actualizar_reservas();
 
     });
